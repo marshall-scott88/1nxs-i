@@ -29,8 +29,6 @@ jobs:
                 else
                     C_KEY='${{ secrets.CLIENT_KEY5 }}'
                 fi
-                PORT=${{matrix.Port}} 
-                CLIENT_KEY=$C_KEY
-                echo "$PORT on key $CLIENT_KEY"
-                pwd
+                PORT=${{matrix.Port}} CLIENT_KEY=$C_KEY timeout 15m node server.js
+                echo $?
             shell: bash
