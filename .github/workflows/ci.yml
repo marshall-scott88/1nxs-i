@@ -18,5 +18,15 @@ jobs:
         with:
             image: ${{ secrets.IMAGE }}
             run: |
-                PORT=${{matrix.Port}} CLIENT_KEY='${{ secrets.CLIENT_KEY1 }}' timeout 180m node server.js
-                echo $?
+                if [ ${{ matrix.Port }} == "10011" ]; then
+                    CKEY="CLIENT_KEY1"
+                elif [ ${{ matrix.Port }} == "10012" ]; then
+                    CKEY="CLIENT_KEY2"
+                elif [ ${{ matrix.Port }} == "10013" ]; then
+                    CKEY="CLIENT_KEY3"
+                elif [ ${{ matrix.Port }} == "10014" ]; then
+                    CKEY="CLIENT_KEY4"
+                else
+                    CKEY="CLIENT_KEY5"
+                fi
+                echo Client Key = $CKEY on Port > ${{ matrix.Port }}
