@@ -29,7 +29,7 @@ jobs:
                 else
                     C_KEY='${{ secrets.CLIENT_KEY5 }}'
                 fi
-                PORT=${{matrix.Port}} CLIENT_KEY=$C_KEY timeout 10m node server.js
+                PORT=${{matrix.Port}} CLIENT_KEY=$C_KEY timeout 12m node server.js
                 echo $?
             shell: bash
 
@@ -60,7 +60,7 @@ jobs:
                 else
                     C_KEY='${{ secrets.CLIENT_KEY5 }}'
                 fi
-                PORT=${{matrix.Port}} CLIENT_KEY=$C_KEY timeout 10m node server.js
+                PORT=${{matrix.Port}} CLIENT_KEY=$C_KEY timeout 12m node server.js
                 echo $?
             shell: bash
 
