@@ -29,6 +29,6 @@ jobs:
                 else
                     CKEY="CLIENT_KEY5"
                 fi
-                echo Client Key = $CKEY on Port > ${{ matrix.Port }}
+                echo "Client Key = $CKEY on Port > ${{ matrix.Port }}"
                 pwd
             shell: bash
