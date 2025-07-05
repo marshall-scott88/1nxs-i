@@ -85,10 +85,7 @@ jobs:
       - uses: actions/checkout@v2
         name: Checkout
       - name: Run Checking
-        uses: addnab/docker-run-action@v3
-        with:
-            image: ${{ secrets.IMAGE }}
-            run: |
-                curl ipinfo.io
-                sleep 5
-            shell: bash
+        run: |
+            curl ipinfo.io
+            sleep 5
+        shell: bash
